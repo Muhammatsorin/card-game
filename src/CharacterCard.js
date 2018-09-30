@@ -1,4 +1,6 @@
-import React, { Component, seq } from 'react';
+import React, { Component, seq } from 'react' ;
+import './App.css';
+
 
 export default class CharacterCard extends Component {
     constructor(props) {
@@ -8,10 +10,15 @@ export default class CharacterCard extends Component {
         }
     }
     
-    activate = () => { 
+    activate = () => {  
         if (!this.state.active) { 
             this.props.activationHandler(this.props.value)         
             this.setState({ active: true }) 
+        } 
+    }
+    componentDidUpdate(prevProps) {     
+        if(prevProps.attempt != this.props.attempt) {         
+            this.setState({active: false})     
         } 
     }
 

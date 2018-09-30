@@ -9,7 +9,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <WordCard value="hello" />
+        <WordCard value="5935512045" />
       </div>
     );
   }
